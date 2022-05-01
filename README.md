@@ -38,3 +38,16 @@ Deploy to local blockchain
 Once deployed we can see our console log statements 
 
 Above 3 steps => compile, deploy, execute => Write a script in scripts folder 
+
+===============================
+After writing script
+npx hardhat run scripts/run.js
+
+We deployed smart contract to the local blockchain
+============================
+
+Store the Data
+
+The blockchain = Think of it as a cloud provider, kinda like AWS, but it's owned by no one. It's run by compute power from mining machines all over the world. Usually these people are called miners and we pay them to run our code!
+
+A smart contract = Kinda like our server's code with different functions people can hit.
