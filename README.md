@@ -44,6 +44,12 @@ After writing script
 npx hardhat run scripts/run.js
 
 We deployed smart contract to the local blockchain
+
+What it does?
+- Create a new local ethereum network 
+- Deploy contract
+- Hardhat destroys local network after script ends 
+
 ============================
 
 Store the Data
@@ -51,3 +57,19 @@ Store the Data
 The blockchain = Think of it as a cloud provider, kinda like AWS, but it's owned by no one. It's run by compute power from mining machines all over the world. Usually these people are called miners and we pay them to run our code!
 
 A smart contract = Kinda like our server's code with different functions people can hit.
+
+============================
+
+To keep local server alive so that we can build our website and test
+
+npx hardhat node
+
+- Local ethereum network with 20 accounts 
+- Empty blockchain
+- We need to create a new block and deploy our smart contract on it 
+- deploy.js 
+
+To run 
+npx hardhat run scripts/deploy.js --network localhost 
+
+============================
