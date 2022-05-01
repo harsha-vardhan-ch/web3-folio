@@ -73,3 +73,51 @@ To run
 npx hardhat run scripts/deploy.js --network localhost 
 
 ============================
+
+Alchemy
+
+- Simple way to deploy our contracts to the real Ethereum blockchain.
+- Create a new app on alchemy 
+
+Transaction
+
+Every action on Ethereum blockchain is called Transaction
+    Ex - Sending some ETH, Updating a variable in our contract, Deploying a contract
+
+blockchain is just a bunch of computers, around the world run by miners that have a copy of the blockchain( transactions ).
+
+When we deploy our contract, we need to tell all those miners, "hey, this is a new smart contract, please add my smart contract to the blockchain and then tell everyone else about it as well".
+
+Alchemy comes in and helps broadcast our contract creation transaction so that it can be picked up by miners as quickly as possible. 
+
+Once the transaction is mined, it is then broadcasted to the blockchain as a legit transaction. 
+
+From there, everyone updates their copy of the blockchain.
+
+============================
+
+Testnet 
+
+- Free
+- Run by actual miners and mimic real-world scenarios
+
+We can test our application in a real-world scenario where we're actually going to:
+
+1. Broadcast our transaction
+2. Wait for it to be picked up by actual miners
+3. Wait for it to be mined
+4. Wait for it to be broadcasted back to the blockchain telling all the other miners to update their copies
+
+Contract => Deploy to Mainnet => Real Money
+Contract => Deploy to Testnet => Fake Money ( Fake Ethereum )
+
+Rinkeby Testnet
+
+https://faucets.chain.link/rinkeby
+Get fake ethereum from above  into your metamask wallet
+
+Modify hardhat.config.js and .env 
+
+Why do you need to use your private key? 
+- To perform a transaction like deploying a contract, you need to "login" to the blockchain. 
+- Your username is your public address,  password is your private key. It's kinda like logging into AWS or GCP to deploy.
