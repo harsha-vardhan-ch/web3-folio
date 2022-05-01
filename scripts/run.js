@@ -23,13 +23,19 @@ const main = async () => {
 	// millions of contracts on the actual blockchain. this address gives us easy access to our contract
 	console.log("Contract deployed to:", waveContract.address);
 
-	// Address deploying our contract => Taken care by hardhat in this example => Person waving at us 
+	// Address deploying our contract => Taken care by hardhat in this example => Person waving at us
 	console.log("Contract deployed by:", owner.address);
 
 	let waveCount;
 	waveCount = await waveContract.getTotalWaves();
 
 	let waveTxn = await waveContract.wave();
+	await waveTxn.wait();
+
+	waveCount = await waveContract.getTotalWaves();
+
+  //  Other users
+	waveTxn = await waveContract.connect(randomPerson).wave();
 	await waveTxn.wait();
 
 	waveCount = await waveContract.getTotalWaves();
