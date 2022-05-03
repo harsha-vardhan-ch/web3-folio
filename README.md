@@ -116,8 +116,52 @@ Rinkeby Testnet
 https://faucets.chain.link/rinkeby
 Get fake ethereum from above  into your metamask wallet
 
+---------------------------
+
+Deploy to Rinkeby testnet
+============================
+npm install --save dotenv
+
 Modify hardhat.config.js and .env 
 
 Why do you need to use your private key? 
 - To perform a transaction like deploying a contract, you need to "login" to the blockchain. 
 - Your username is your public address,  password is your private key. It's kinda like logging into AWS or GCP to deploy.
+
+To deploy => npx hardhat run scripts/deploy.js --network rinkeby
+
+------------------------------
+
+https://rinkeby.etherscan.io => Enter your deployed contract address and view the transaction
+
+-----------------------------------
+
+Connect Wallet with Webapp
+============================
+
+For our website to talk to the blockchain, we need to somehow connect our wallet to it. 
+Once we connect our wallet to our website, our website will have permissions to call smart contracts on our behalf.
+( similar to authenticating in to a website )
+
+If we're logged in to Metamask, it will automatically inject a special object named ethereum into our window.
+
+================================================
+We have done the deployment of the contract
+
+Below is only when customized modifications to the contract
+================================================ 
+
+update WavePortal.sol 
+    Storing messages from users on the blockchain
+    - Struct in solidity
+    - Event in solidity 
+        - events are ways to communicate with a client application or front-end website that something has happened on the blockchain.
+
+Update run.js to test the new functionality we added.
+
+npx hardhat run scripts/run.js => Test locally
+npx hardhat run scripts/deploy.js --network rinkeby => Deploy on network
+
+change files on front end
+
+---------------------------
