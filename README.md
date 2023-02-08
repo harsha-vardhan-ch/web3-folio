@@ -165,3 +165,5 @@ npx hardhat run scripts/deploy.js --network rinkeby => Deploy on network
 change files on front end
 
 ---------------------------
+
+Send ETH to people waving at you
